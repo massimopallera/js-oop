@@ -13,10 +13,29 @@ class Veicolo {
     this.colore = colore
   }
 
+  // to get the object
+  getInfo(){
+    return this;
+  }
+
+  //to separate logs
+  logInfo(){
+    for(const k in this){
+      console.log(`${k}: ${this[k]}`);
+    }
+  }
+
+  calcAge(){
+    const now = new Date().getFullYear()
+    const age = now - Number(this.anno)
+    // console.log(age);
+  }
 
 }
 
 
 //istance
-const fiat = new Veicolo('Fiat',2019, 'blu', 5, benzina)
+const fiat = new Veicolo('Fiat',2019, 'blu', 5, 'benzina')
 
+console.log(fiat.getInfo());
+console.log(fiat.calcAge());
