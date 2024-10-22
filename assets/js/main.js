@@ -1,3 +1,5 @@
+//classes
+
 class Veicolo {
   marca;
   anno;
@@ -28,14 +30,34 @@ class Veicolo {
   calcAge(){
     const now = new Date().getFullYear()
     const age = now - Number(this.anno)
+
+    return age
     // console.log(age);
+  }
+
+}
+
+class Automobile extends Veicolo{
+
+  getCarburante(){
+    return this.carburante
+  }
+
+  getPorte(){
+    return this.porte
   }
 
 }
 
 
 //istance
-const fiat = new Veicolo('Fiat',2019, 'blu', 5, 'benzina')
+const fiat = new Veicolo('Fiat',2019, 'blu')
+const opel = new Automobile('Opel', 2020, 'nera', 4, 'benzina')
 
+
+//results
 console.log(fiat.getInfo());
 console.log(fiat.calcAge());
+
+console.log(opel.getCarburante());
+console.log(opel.getPorte());
